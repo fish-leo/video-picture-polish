@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-alh — ALH Pro Mac 等效工具链 (统一入口)
+alh — Video/Picture Polish 视频图片润色工具链 (统一入口)
 图片超分 / AI抠图 / 视频去重 / 视频补帧(RIFE) / 视频超分
 
 用法:
@@ -15,7 +15,7 @@ alh — ALH Pro Mac 等效工具链 (统一入口)
 import os, sys, subprocess, argparse, shutil, tempfile, glob, json
 
 HOME = os.path.expanduser("~")
-BASE = os.path.join(HOME, "Projects", "alh-pro-mac")
+BASE = os.path.join(HOME, "Projects", "video-picture-polish")
 ENGINES = os.path.join(BASE, "engines")
 REALESRGAN = os.path.join(ENGINES, "realesrgan-ncnn-vulkan-v0.2.0-macos", "realesrgan-ncnn-vulkan")
 REALESRGAN_MODELS = os.path.join(ENGINES, "realesrgan-ncnn-vulkan-v0.2.0-macos", "models")
@@ -88,7 +88,7 @@ def img_up(args):
 
 # ---------- 抠图 ----------
 def img_rmbg(args):
-    if not os.path.exists(REMBG): sys.exit("rembg 环境未装好, 先跑: ~/Projects/alh-pro-mac/.venv/bin/pip install rembg")
+    if not os.path.exists(REMBG): sys.exit("rembg 环境未装好, 先跑: ~/Projects/video-picture-polish/.venv/bin/pip install rembg")
     out = args.out or os.path.splitext(args.input)[0] + "_rmbg.png"
     cmd = [REMBG, "i", "-m", args.model, args.input, out]
     if args.alpha: cmd = [REMBG, "i", "-a", "-m", args.model, args.input, out]
@@ -198,7 +198,7 @@ def pipe(args):
         shutil.rmtree(tmp, ignore_errors=True)
 
 def main():
-    ap = argparse.ArgumentParser(description="alh — Mac 视频/图片 AI 增强工具链 (ALH Pro 等效)")
+    ap = argparse.ArgumentParser(description="alh — Mac 视频/图片 AI 润色工具链 (Video/Picture Polish CLI)")
     sub = ap.add_subparsers(dest="cmd", required=True)
 
     p = sub.add_parser("probe", help="视频体检(编码信息+重复帧报告)")

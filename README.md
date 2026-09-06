@@ -1,4 +1,4 @@
-# ALH Pro Mac — macOS 本地 AI 视频/图片增强工作台
+# Video/Picture Polish — macOS 本地 AI 视频/图片润色工作台
 
 在 macOS 上开箱即用的本地 AI 增强工具链 + 图形界面（工作站）。
 灵感来自 [ALH Pro](https://github.com/AlLHHH/ALH-Pro)（Windows 专属），本仓库是在 Mac 上的**独立实现**：
@@ -34,8 +34,8 @@
 
 ```bash
 # 1. 克隆到约定路径（代码内部按此路径解析引擎）
-git clone https://github.com/<你的账号>/alh-pro-mac.git ~/Projects/alh-pro-mac
-cd ~/Projects/alh-pro-mac
+git clone https://github.com/<你的账号>/video-picture-polish.git ~/Projects/video-picture-polish
+cd ~/Projects/video-picture-polish
 
 # 2. 下载引擎二进制 + 模型（约 1GB，来自官方 release，见 THIRD_PARTY_NOTICES）
 ./scripts/setup_engines.sh

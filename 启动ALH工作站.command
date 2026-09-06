@@ -1,15 +1,15 @@
 #!/bin/bash
-# ⚡ ALH Pro · Mac 工作站 启动器 (双击运行)
+# ⚡ Video/Picture Polish 启动器 (双击运行)
 # 自动: 清理旧进程 → 起服务 → 等就绪 → 打开浏览器
 cd "$(dirname "$0")"
-cd ../ui 2>/dev/null || cd ~/Projects/alh-pro-mac/ui
+cd ../ui 2>/dev/null || cd ~/Projects/video-picture-polish/ui
 
-PY=~/Projects/alh-pro-mac/.venv/bin/python
+PY=~/Projects/video-picture-polish/.venv/bin/python
 PORT=8456
 
 echo ""
 echo "  ╔══════════════════════════════════════════╗"
-echo "  ║   ALH Pro · Mac 工作站                    ║"
+echo "  ║   Video/Picture Polish                    ║"
 echo "  ║   图片超分 / 抠图 / 视频去重 / AI补帧     ║"
 echo "  ╚══════════════════════════════════════════╝"
 echo ""

@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-alh UI server — ALH Pro Mac 工作站 后端
+alh UI server — Video/Picture Polish 工作站 后端
 - 本地文件浏览(素材盘 GB 级视频不需要上传)
 - 任务系统: 去重/补帧/一键/超分/抠图, 后台线程 + 实时进度/日志
 - Range 媒体流(浏览器直接预览源视频与结果)
@@ -9,7 +9,7 @@ import os, sys, re, json, time, uuid, mimetypes, subprocess, threading, signal
 from pathlib import Path
 from flask import Flask, request, jsonify, Response, send_from_directory, abort
 
-BASE = Path.home() / "Projects" / "alh-pro-mac"
+BASE = Path.home() / "Projects" / "video-picture-polish"
 ALH = BASE / "alh.py"
 DEDUP = BASE / "scripts" / "dedup.py"
 PY = sys.executable  # 由 .venv python 启动 → 用同一解释器调子任务
@@ -204,7 +204,7 @@ def health():
 @app.get("/api/roots")
 def roots():
     """通用快捷入口: 家/下载/桌面/影片 + 自动发现外置卷(/Volumes/*)。
-    本地私有快捷入口可放 ~/Projects/alh-pro-mac/local_roots.json
+    本地私有快捷入口可放 ~/Projects/video-picture-polish/local_roots.json
     (gitignore, 不入库): [{"label":"我的素材", "path":"/Volumes/X/..."}]"""
     roots = []
     home = str(Path.home())
@@ -388,5 +388,5 @@ def reveal():
     return jsonify({"ok": True})
 
 if __name__ == "__main__":
-    print(f"\n  ⚡ ALH Pro · Mac 工作站  http://localhost:{PORT}\n")
+    print(f"\n  ⚡ Video/Picture Polish  http://localhost:{PORT}\n")
     app.run(host="127.0.0.1", port=PORT, threaded=True, debug=False)
