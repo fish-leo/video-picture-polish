@@ -1,0 +1,5 @@
+rembg[cli]
+onnxruntime
+pillow
+numpy
+flask

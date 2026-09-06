@@ -1,0 +1,25 @@
+# 不入库: 第三方二进制 / 本地环境
+engines/
+.venv/
+__pycache__/
+*.pyc
+
+# 不入库: 本地个人信息
+# 私有快捷入口(含个人目录路径)
+local_roots.json
+
+# 本地 PATH 软链启动器(含个人 home 路径), 安装时自行创建
+bin/
+
+.DS_Store
+
+# 测试/媒体产物
+*.mp4
+*.mkv
+*.png
+*.jpg
+*.jpeg
+*.webp
+
+# README 演示截图例外
+!ui/screenshot.png

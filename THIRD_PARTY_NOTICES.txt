@@ -1,0 +1,17 @@
+# Third Party Notices
+
+本工具以独立子进程方式调用以下开源引擎/模型，版权归各原作者所有。
+二进制与模型不在本仓库内，由 `scripts/setup_engines.sh` 从官方 Release 下载。
+
+| 组件 | 用途 | 作者/项目 | 许可 | 官方源 |
+|---|---|---|---|---|
+| Real-ESRGAN (ncnn-vulkan) | 图片/视频超分 | xinntao/Real-ESRGAN-ncnn-vulkan | MIT | https://github.com/xinntao/Real-ESRGAN-ncnn-vulkan/releases |
+| waifu2x (ncnn-vulkan) | 动漫图片超分 | nihui/waifu2x-ncnn-vulkan | MIT | https://github.com/nihui/waifu2x-ncnn-vulkan/releases |
+| RIFE (ncnn-vulkan) | 视频补帧 | nihui/rife-ncnn-vulkan | MIT | https://github.com/nihui/rife-ncnn-vulkan/releases |
+| ncnn | 底层推理框架 | Tencent/ncnn | BSD-3-Clause | https://github.com/Tencent/ncnn |
+| rembg | AI 抠图 | danielgatis/rembg | MIT | https://github.com/danielgatis/rembg |
+| U²-Net / ISNet / BiRefNet | 抠图模型 | 各模型原作者 | 研究用途 | 见 rembg 项目 |
+| FFmpeg | 媒体处理 | FFmpeg 团队 | LGPL/GPL | https://ffmpeg.org |
+
+本仓库灵感来自 [AlLHHH/ALH-Pro](https://github.com/AlLHHH/ALH-Pro)（Windows 专属，保留所有权利）。
+本项目为 macOS 上的独立实现，**不含 ALH Pro 的任何源代码**；其功能与参数设计思路受其启发。
